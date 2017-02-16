@@ -1,0 +1,11 @@
+*.egg-info*
+*.geany*
+*.pyc
+*.pyo
+*.so
+*.*~
+~
+.coverage
+build
+dist
+env

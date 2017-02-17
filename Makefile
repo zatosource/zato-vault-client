@@ -44,6 +44,7 @@ pyflakes:
 	$(BIN_DIR)/pyflakes $(CURDIR)/test
 
 pypi:
-	rm -rf $(CURDIR)/build
+	$(MAKE) clean
+	$(MAKE) default
 	$(BIN_DIR)/python $(CURDIR)/setup.py sdist bdist_wheel
 	$(BIN_DIR)/twine upload $(CURDIR)/dist/zato*

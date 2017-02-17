@@ -37,9 +37,12 @@ test:
 	$(MAKE) _test
 
 _test:
-	$(BIN_DIR)/nosetests $(CURDIR)/test/zato/vault/* --with-coverage --cover-tests --cover-erase --cover-package=zato.vault.client --nocapture
-	$(MAKE) flake8
+	$(MAKE) pyflakes
 
-flake8:
+pyflakes:
 	$(BIN_DIR)/pyflakes $(CURDIR)/src
 	$(BIN_DIR)/pyflakes $(CURDIR)/test
+
+pypi:
+	$(BIN_DIR)/python $(CURDIR)/setup.py sdist bdist_wheel
+	$(BIN_DIR)/twine upload $(CURDIR)/dist/zato*

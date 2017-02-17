@@ -14,13 +14,9 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import os, sys
 from setuptools import setup, find_packages
 
-version = '1.0'
+version = '1.1'
 
 LONG_DESCRIPTION = """"""
-
-def parse_requirements(requirements):
-    with open(requirements) as f:
-        return [line.strip('\n') for line in f if line.strip('\n') and not line[0] in ('#',)]
 
 package_dir = b'src' if sys.version_info.major == 2 else 'src'
 
@@ -40,8 +36,10 @@ setup(
       packages = find_packages(package_dir),
 
       namespace_packages = ['zato'],
-      install_requires = parse_requirements(
-          os.path.join(os.path.dirname(os.path.realpath(__file__)), 'requirements.txt')),
+      install_requires = [
+          'hvac',
+          'six',
+        ]
 
       zip_safe = False,
 

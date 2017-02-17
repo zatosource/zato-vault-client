@@ -117,6 +117,11 @@ class Client(_Client):
             VAULT.AUTH_METHOD.GITHUB.id: self._auth_github,
         }
 
+    def __str__(self):
+        return '<{} at {}, {}>'.format(self.__class__.__name__, hex(id(self)), self._url)
+
+    __repr__ = __str__
+
     def ping(self):
         return self.is_sealed()
 

@@ -39,7 +39,7 @@ setup(
       install_requires = [
           'hvac',
           'six',
-        ]
+        ],
 
       zip_safe = False,
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Copyright (C) 2017, Zato Source s.r.o. https://zato.io
+Copyright (C) 2019, Zato Source s.r.o. https://zato.io
 
 Licensed under LGPLv3, see LICENSE.txt for terms and conditions.
 """
@@ -124,7 +124,7 @@ class Client(_Client):
     __repr__ = __str__
 
     def ping(self):
-        return self.is_sealed()
+        return self.is_sealed
 
     def _auth_token(self, client_token, _from_vault=VaultResponse.from_vault):
         if not client_token:
